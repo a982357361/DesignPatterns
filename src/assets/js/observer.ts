@@ -1,3 +1,6 @@
+/**
+ * 观察者模式
+ */
 interface SubjectImpl {
   add(ob: Observer): void;
   notifyObserver(): void;
