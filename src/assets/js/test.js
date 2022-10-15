@@ -1,19 +1,22 @@
-function fun() {
-  this.aaa = "1";
+function fun(value) {
+  this.aaa = value;
   // this.print = () => {
   //   console.log(this.aaa);
   // }
+
 }
-fun.prototype.aaa = "2";
+fun.prototype.bbb = "2";
 fun.prototype.print = function () {
   console.log(this.aaa);
 }
-var obj = new fun();
-obj.aaa = "2";
+fun.prototype.setA = function () {
 
-
-var obj2 = {
-  aaa: "3"
 }
+var obj = new fun(1);
+fun(2);
 
-obj.print.call(obj2);
+
+// var obj2 = new fun("3")
+// obj2.__proto__.bbb = "3";
+
+obj.print();
